@@ -1,7 +1,7 @@
 <?php
     session_start();                        //Vérifier qu'on accède à cette page via validation du formulaire
     if (isset($_POST["submit"]))            
-    {
+    {                                  //Vérifier que toutes les valeurs correspondent à ce qu'on veut
         $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);                                   //Vérifier que toutes les valeurs correspondent à ce qu'on veut
         $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
