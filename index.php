@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-<div style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.7) 100%),url(image/winter.jpg); background-size: cover;"  
-class="container d-flex justify-content-center flex-column flex-wrap m-5 rounded">
+<div   
+class="container d-flex justify-content-center flex-column flex-wrap m-5 rounded ">
     <h1 class="text-center link-secondary display-2"><u>Ajouter un produit</u></h1>
     <form action="traitement.php" method="post" class="d-flex justify-content-center flex-column">
         <p>
@@ -31,7 +31,7 @@ class="container d-flex justify-content-center flex-column flex-wrap m-5 rounded
             </label>
         </p>
         <p>
-            <input type="submit" name="submit" value="Ajouter le produit" class="btn btn-lg btn-primary">
+            <input type="submit" name="submit" value="Ajouter le produit" class="btn btn-lg btn-primary"> <!-- C'est ce qui est dans le submit qui va être vérifié dans la page de traitement>
         </p>
     </form>
 </div>    
