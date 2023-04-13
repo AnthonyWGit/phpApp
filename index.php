@@ -10,10 +10,10 @@
 <body>
 <div class="container d-flex justify-content-center flex-column flex-wrap m-5 rounded bg-dark bg-gradient">
     <header>
-        <div class="navbar display-6 text-center">
-            <a href="recap.php">Récap</a>
-            <a href="index.php">Index</a>
-        </div>
+        <nav class="navbar navbar-expand-lg display-6 justify-content-around">
+            <a href="recap.php" class="navbar-brand text-white">Récap</a>
+            <a href="index.php" class="navbar-brand text-white">Index</a>
+        </nav>
     </header>
 </div>
     <div class="container d-flex justify-content-center flex-column flex-wrap m-5 rounded bg-success bg-gradient">
@@ -21,19 +21,19 @@
     <form action="traitement.php" method="post" class="">
         <p>
             <label>
-            <div class="well well-lg display-6">Nom du produit : </div>
+            <div class="well well-lg display-6"><em>Nom du produit : </em></div>
                 <input type="text" name="name" class="w-50 p-3">
             </label>
         </p>
         <p>
             <label>
-            <div class="well well-lg display-6">Prix du produit : </div>
+            <div class="well well-lg display-6"><em>Prix du produit : </em></div>
                 <input type="number" step="any" name="price" class="w-50 p-3">
             </label>
         </p>
         <p>
             <label>
-            <div class="well well-lg display-6">Quantité désirée : </div>
+            <div class="well well-lg display-6"><em>Quantité désirée : </em></div>
                 <input type="number" name="qtt" value="1" class="w-50 p-3">
             </label>
         </p>
