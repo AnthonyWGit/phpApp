@@ -51,7 +51,13 @@
                     "<td>".number_format($product["price"], 2, ",", "&nbsp;")."&nbsp;€</td>",      //&nbsp : non-breaking space : strings separated by this will not appear on second line  
                     "<td>".$product["qtt"]."</td>",
                     "<td>".number_format($product["total"], 2, ",", "&nbsp;")."&nbsp;€</td>",
-                    "<td> <i class='bi bi-x'></i></td>",
+                    "<td>
+                        <form action='supression.php' method='post'>
+                            <button class ='btn btn-warning' type='submit' name='submit>
+                                <i class='bi bi-x'></i>
+                            </button>
+                        </form>
+                    </td>",
                 "</tr>";
             $totalGeneral += $product['total'];
         }
