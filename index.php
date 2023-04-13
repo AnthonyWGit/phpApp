@@ -9,8 +9,8 @@
 </head>
 <body>
 <div   
-class="container d-flex justify-content-center flex-column flex-wrap m-5 rounded ">
-    <h1 class="text-center link-secondary display-2"><u>Ajouter un produit</u></h1>
+class="container d-flex justify-content-center flex-column flex-wrap m-5 rounded bg-success bg-gradient">
+    <h1 class="text-center link-info display-2"><u>Ajouter un produit</u></h1>
     <form action="traitement.php" method="post" class="d-flex justify-content-center flex-column">
         <p>
             <label>
@@ -26,7 +26,7 @@ class="container d-flex justify-content-center flex-column flex-wrap m-5 rounded
         </p>
         <p>
             <label>
-            <div class="well well-lg display-6">    Quantité désirée : </div>
+            <div class="well well-lg display-6">Quantité désirée : </div>
                 <input type="number" name="qtt" value="1" class="w-50 p-3">
             </label>
         </p>
