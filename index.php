@@ -1,3 +1,6 @@
+<?php
+    session_start();       
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +23,7 @@
                     </nav>
                 </header>
             </div>
-            <div class="d-flex justify-content-center flex-column flex-wrap ml-5 mr-5 mb-5 rounded bg-success bg-gradient ">
+            <div class="d-flex justify-content-center flex-column flex-wrap ml-5 mr-5 mb-5 rounded bg-success bg-gradient bg-opacity-75 ">
                 <h1 class="text-center text-info display-2 user-select-none"><u>Ajouter un produit</u></h1>
                 <form action="traitement.php" method="post" class="d-flex flex-column justify-content-around">
                     <p>
@@ -47,12 +50,28 @@
                 </form>
             </div>
         </div>
-        <div class="d-flex">
-            <ul>
-                <li>item</li>
-                <li>Item</li>
-            </ul>
-        </div>
+<!--____________________________________________________________________________________-->
+<?php
+    if (!isset($_SESSION["products"]) || empty($_SESSION["products"]))
+    {
+        
+    }
+    else
+    {
+        echo    "<div class='d-flex flex-column ml-5 mr-5 mt-5 mb-5 bg-dark bg-gradient bg-opacity-25 border border-secondary rounded-right'>
+                    <h5>Articles dans le panier</h5>
+                    <ul>";
+                        foreach($_SESSION['products'] as $index => $product)
+                        {
+                            echo "<li class='list-group-item list-group-item-info mb-2'>".$product["name"]."</li>";
+                        }
+                        
+        echo    "</ul>
+                </div>";
+    }
+?>
+<!--______________________________________________________________________________________________________-->
+
     </div>    
 </body>
 </html>
