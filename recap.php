@@ -53,7 +53,7 @@
                     "<td>".number_format($product["total"], 2, ",", "&nbsp;")."&nbsp;€</td>",
                     "<td>
                         <form action='supression.php' method='post'>
-                            <button class ='btn btn-warning' type='submit' name='submit>
+                            <button class='btn btn-warning' value='AAA' name='submit'>
                                 <i class='bi bi-x'></i>
                             </button>
                         </form>
