@@ -6,6 +6,7 @@
         $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
         $_SESSION['msg'] = "Le produit a été entré";
+        $_SESSION['supprimerTOUT'] = "falseZ";
         $yes = 1;
         $_SESSION['status'] = $yes;
         if($name && $price && $qtt)

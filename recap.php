@@ -62,7 +62,8 @@
             $totalGeneral += $product['total'];
         }
         echo "<tr>",
-                "<td colspan=4>Total général :</td>",
+                "<td><form action='supression.php' method='post'><button class='btn btn-warning' value='".$_SESSION['supprimerTOUT']."' name='submit'>Tout supprimer</button></form></td>",
+                "<td colspan=3>Total général :</td>",
                 "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>";
     }
     ?>
