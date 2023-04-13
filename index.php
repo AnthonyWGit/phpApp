@@ -11,9 +11,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-fluid d-flex flex-wrap">
+    <?php
+    if (($_SESSION['status'] == 1 || 2) && $_SESSION['status'] != 'init')
+    {
+        echo "<div class='container-fluid d-flex bg-info bg-gradient bg-opacity-25 w-50 rounded justify-content-around text-danger mt-1'><h4>"
+        .$_SESSION['msg']."</h4> </div>";
+        $_SESSION['status'] = 'init';
+    }
+    else if ($_SESSION['status'] == 'init')
+    {
+
+    }
+    ?>
+    <div class="container-fluid d-flex flex-wrap mt-3">
         <div class="d-flex flex-column flex-grow-1">
-            <div class=" l-5 mr-5 mt-5 rounded bg-dark bg-gradient">
+            <div class=" l-5 mr-5 rounded bg-dark bg-gradient">
                 <header>
                     <nav class="navbar-expand-lg navbar-nav display-6 ">
                         <ul class="navbar-nav justify-content-around w-100">
@@ -58,12 +70,12 @@
     }
     else
     {
-        echo    "<div class='d-flex flex-column ml-5 mr-5 mt-5 mb-5 bg-dark bg-gradient bg-opacity-25 border border-secondary rounded-right'>
+        echo    "<div class='d-flex flex-column ml-5 mr-5 mb-5 bg-dark bg-gradient bg-opacity-25 border border-secondary rounded-right'>
                     <h5>Articles dans le panier</h5>
                     <ul>";
                         foreach($_SESSION['products'] as $index => $product)
                         {
-                            echo "<li class='list-group-item list-group-item-info mb-2'>".$product["name"]."</li>";
+                            echo "<li class='list-group-item list-group-item-info mb-2 text-center'>".$product["name"]."</li>";
                         }
                         
         echo    "</ul>
