@@ -31,7 +31,8 @@
     }
     else
     {
-        echo "<table>",
+        echo "<div class='table-responsive d-flex flex-row flex-wrap'>",
+           "<table class='w-100'>",
                 "<thead>",
                     "<tr>",
                         "<th>#</th>",
@@ -46,10 +47,11 @@
         foreach($_SESSION["products"] as $index => $product)
         {
             echo "<tr>",
-                    "<td>".$index."</td>",
+                    "<td>".$index."</td>", 
                     "<td>".$product["name"]."</td>",
                     "<td>".number_format($product["price"], 2, ",", "&nbsp;")."&nbsp;€</td>",      //&nbsp : non-breaking space : strings separated by this will not appear on second line  
-                    "<td>".$product["qtt"]."</td>",
+                    "<td class='d-flex flex-row justify-content-around align-items-center'>".$product["qtt"]."<form action='traitement.php' method='post'>
+                    <button class='btn btn-info  text-nowrap' value='UP' name='submit'><i class='bi bi-arrow-up'></i></button></form></td>",
                     "<td>".number_format($product["total"], 2, ",", "&nbsp;")."&nbsp;€</td>",
                     "<td>
                         <form action='supression.php' method='post'>
@@ -64,7 +66,7 @@
         echo "<tr>",
                 "<td><form action='supression.php' method='post'><button class='btn btn-warning' value='".$_SESSION['supprimerTOUT']."' name='submit'>Tout supprimer</button></form></td>",
                 "<td colspan=3>Total général :</td>",
-                "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>";
+                "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td></div>";
     }
     ?>
     </div>
