@@ -1,7 +1,7 @@
 <?php
     session_start();    
     
-    if ($_POST['submit'] == "falseZ")
+    if ($_POST['submit'] == "suppression")
     {
         $_SESSION['products'] = [];
     }
