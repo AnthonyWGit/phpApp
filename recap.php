@@ -14,24 +14,24 @@
 <body>
 <div class="container-fluid d-flex flex-wrap mt-3">
         <div class="d-flex flex-column flex-grow-1">
-            <div class=" l-5 mr-5 rounded bg-dark bg-gradient">
-                <header>
+            <div class="l-5 mr-5 rounded bg-dark bg-gradient">
+                <header class="">
                     <nav class="navbar-expand-lg navbar-nav display-6 ">
-                        <ul class="navbar-nav justify-content-around w-100">
+                        <ul class="d-flex flex-row  navbar-nav justify-content-around">
                             <li><a href="recap.php" class="navbar-brand text-white">Récap</a></li>
                             <li><a href="index.php" class="navbar-brand text-white">Index</a></li>                            
                         </ul>
                     </nav>
                 </header>
             </div>
-    <?php var_dump($_SESSION); 
+    <?php //var_dump($_SESSION); 
     if (!isset($_SESSION["products"]) || empty($_SESSION["products"]))
     {
         echo "<p>Pas de produits en session</p>";
     }
     else
     {
-        echo "<div class='table-responsive d-flex flex-row flex-wrap'>",
+        echo "<div class='pt-5 table-responsive d-flex flex-row flex-wrap'>",
            "<table class='w-100'>",
                 "<thead>",
                     "<tr>",

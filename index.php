@@ -14,7 +14,7 @@
     <?php
     if (($_SESSION['status'] == 1 || 2) && $_SESSION['status'] != 'init')
     {
-        echo "<div class='container-fluid d-flex bg-info bg-gradient bg-opacity-25 w-50 rounded justify-content-around text-danger mt-1'><h4>"
+        echo "<div class='container-fluid d-flex bg-info bg-gradient bg-opacity-25 w-50 rounded-start justify-content-around text-danger mt-1'><h4>"
         .$_SESSION['msg']."</h4> </div>";
         $_SESSION['status'] = 'init';
     }
@@ -25,17 +25,17 @@
     ?>
     <div class="container-fluid d-flex flex-wrap mt-3">
         <div class="d-flex flex-column flex-grow-1">
-            <div class=" l-5 mr-5 rounded bg-dark bg-gradient">
-                <header>
+            <div class="l-5 mr-5 rounded-start bg-dark bg-gradient">
+                <header class="">
                     <nav class="navbar-expand-lg navbar-nav display-6 ">
-                        <ul class="navbar-nav justify-content-around w-100">
+                        <ul class="d-flex flex-row  navbar-nav justify-content-around">
                             <li><a href="recap.php" class="navbar-brand text-white">Récap</a></li>
                             <li><a href="index.php" class="navbar-brand text-white">Index</a></li>                            
                         </ul>
                     </nav>
                 </header>
             </div>
-            <div class="d-flex justify-content-center flex-column flex-wrap ml-5 mr-5 mb-5 rounded bg-success bg-gradient bg-opacity-75 ">
+            <div class="d-flex justify-content-center flex-column flex-wrap ml-5 mr-5 mb-5 rounded-start bg-success bg-gradient bg-opacity-75 ">
                 <h1 class="text-center text-info display-2 user-select-none"><u>Ajouter un produit</u></h1>
                 <form action="traitement.php" method="post" class="d-flex flex-column justify-content-around">
                     <p>
@@ -70,12 +70,12 @@
     }
     else
     {
-        echo    "<div class='d-flex flex-column ml-5 mr-5 mb-5 bg-dark bg-gradient bg-opacity-25 border border-secondary rounded-right'>
-                    <h5>Articles dans le panier</h5>
-                    <ul>";
+        echo    "<div class='d-flex flex-column ml-5 mr-5 mb-5 bg-dark bg-gradient w-25 text-center bg-opacity-25 border border-secondary rounded-right'>
+                    <h5 class='m-1 display-6 pb-4'>Articles dans le panier</h5>
+                    <ul class='d-flex justify-content-center align-items-center rounded-end list-group'>";
                         foreach($_SESSION['products'] as $index => $product)
                         {
-                            echo "<li class='list-group-item list-group-item-info mb-2 text-center'>".$product["name"]."</li>";
+                            echo "<li class='list-group-item list-group-item-action rounded m-1 w-75 list-group-item-info text-center'>".$product["name"]."</li>";
                         }
                         
         echo    "</ul>
