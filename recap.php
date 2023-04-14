@@ -50,8 +50,8 @@
                     "<td>".$index."</td>", 
                     "<td>".$product["name"]."</td>",
                     "<td>".number_format($product["price"], 2, ",", "&nbsp;")."&nbsp;€</td>",      //&nbsp : non-breaking space : strings separated by this will not appear on second line  
-                    "<td class='d-flex flex-row justify-content-around align-items-center'>".$product["qtt"]."<form action='traitement.php' method='post'>
-                    <button class='btn btn-info  text-nowrap' value='UP' name='submit'><i class='bi bi-arrow-up'></i></button></form></td>",
+                    "<td class='d-flex flex-row justify-content-around align-items-center'>".$product["qtt"]."<form action='qttPlusMoins.php' method='post'>
+                    <button class='btn btn-info  text-nowrap' value='$index' name='submit'><i class='bi bi-arrow-up'></i></button></form></td>",
                     "<td>".number_format($product["total"], 2, ",", "&nbsp;")."&nbsp;€</td>",
                     "<td>
                         <form action='supression.php' method='post'>

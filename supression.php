@@ -11,6 +11,6 @@
         unset($_SESSION['products'][$_POST['submit']]);        
     }
 
-    //header("Location:recap.php");
+    header("Location:recap.php");
 ?>
 
