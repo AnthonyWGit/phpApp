@@ -25,7 +25,7 @@
                 </header>
             </div>
     <?php //var_dump($_SESSION); 
-    if (!isset($_SESSION["products"]) || empty($_SESSION["products"]))
+    if (!isset($_SESSION["products"]) || empty($_SESSION["products"]))          //Quand il n'y a pas de produits ou des produits nons filtrés 
     {
         echo "<p>Pas de produits en session</p>";
     }

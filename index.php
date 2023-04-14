@@ -25,7 +25,7 @@
     ?>
     <div class="container-fluid d-flex flex-wrap mt-3">
         <div class="d-flex flex-column flex-grow-1 rounded ">
-            <div class="l-5 mr-5 bg-dark <?= $_SESSION['products'] == [] ? 'rounded-top ': 'rounded-start ' ?> bg-gradient "?>
+            <div class="l-5 mr-5 bg-dark <?= $_SESSION['products'] == [] ? 'rounded-top ': 'rounded-start ' ?> bg-gradient "?> 
                 <header class="">
                     <nav class="navbar-expand-lg navbar-nav display-6 ">
                         <ul class="d-flex flex-row  navbar-nav justify-content-around">
@@ -64,8 +64,8 @@
         </div>
 <!--____________________________________________________________________________________-->
 <?php
-    if (!isset($_SESSION["products"]) || empty($_SESSION["products"]))
-    {
+    if (!isset($_SESSION["products"]) || empty($_SESSION["products"]))   //<!-- Affichage récapitulatif des produits-->
+    {                                                                    //N'apparait que quand il y a des produits dans session
         
     }
     else
