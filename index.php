@@ -70,7 +70,7 @@
     }
     else
     {
-        echo    "<div class='d-flex flex-column ml-5 mr-5 mb-5 bg-dark bg-gradient w-25 rounded-end text-center bg-opacity-25 border border-secondary rounded-right'>
+        echo    "<div class='d-flex flex-column overflow-auto ml-5 mr-5 mb-5 bg-dark bg-gradient w-25 rounded-end text-center bg-opacity-25 border border-secondary rounded-right'>
                     <h5 class='m-1 display-6 pb-4'>Articles dans le panier</h5>
                     <ul class='d-flex justify-content-center align-items-center rounded-end list-group'>";
                         foreach($_SESSION['products'] as $index => $product)
