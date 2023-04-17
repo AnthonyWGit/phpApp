@@ -1,30 +1,34 @@
+<?php
 
+$contenu = ob_get_clean();
+
+require "template.php"; ?>
 
 <?php
     ob_start();
-
 ?>
 <!--______________________________________________________________________________________________________-->
 
         <div class="d-flex flex-column w-75 flex-grow-1 ">          
             <div class="d-flex justify-content-center flex-column flex-wrap ml-5 mr-5 mb-5 ">
-                <h1 class="text-center text-info display-2 user-select-none"><u>Ajouter un produit</u></h1>
+
                 <form action="traitement.php?action=ajoutProduit" method="post" class="d-flex flex-column justify-content-around form-control bg-light bg-gradient bg-opacity-50">
+                <h1 class="text-center text-info display-2 user-select-none"><u>Ajouter un produit</u></h1>                    
                     <p>
                         <label>
-                        <div class="well well-lg display-6 fst-italic user-select-none p-3">Nom du produit : </div>
+                        <div class="fst-italic user-select-none p-3">Nom du produit : </div>
                             <input type="text" name="name" class="w-50 p-1 m-2 form-control form-control-lg ">
                         </label>
                     </p>
                     <p>
                         <label>
-                        <div class="well well-lg display-6 fst-italic user-select-none p-3">Prix du produit : </div>
+                        <div class="fst-italic user-select-none p-3">Prix du produit : </div>
                             <input type="number" step="any" name="price" class="w-50 p-1 m-2 form-control form-control-lg">
                         </label>
                     </p>
                     <p>
                         <label>
-                        <div class="well well-lg display-6 fst-italic user-select-none p-3">Quantité désirée : </div>
+                        <div class="fst-italic user-select-none p-3">Quantité désirée : </div>
                             <input type="number" name="qtt" value="1" class="w-50 p-1 m-2 form-control form-control-lg">
                         </label>
                     </p>
@@ -36,13 +40,13 @@
         </div>
 <!--____________________________________________________________________________________-->
 <?php
-    if (!isset($_SESSION["products"]) || empty($_SESSION["products"]))   //<!-- Affichage récapitulatif des produits-->
+    if (isset($_SESSION["products"]) == false || ($_SESSION["products"] == []))   //<!-- Affichage récapitulatif des produits-->
     {                                                                    //N'apparait que quand il y a des produits dans session
         
     }
     else
     {
-        echo    "<div class='d-flex flex-grow-1 flex-column overflow-auto ml-5 mr-5 mb-5 bg-dark bg-gradient w-25 rounded-end text-center bg-opacity-25 '>
+        echo    "<div class='d-flex flex-grow-1 flex-column overflow-auto ml-5 mr-5 mb-5 bg-light w-25 text-center'>
                     <h5 class='m-1 display-6 pb-4'>Articles dans le panier</h5>
                     <ul class='d-flex flex-nowrap justify-content-center align-items-center rounded-end list-group'>";
                         foreach($_SESSION['products'] as $index => $product)
@@ -56,8 +60,3 @@
 ?>
 <!--______________________________________________________________________________________________________-->
 
-<?php
-
-$contenu = ob_get_clean();
-
-require "template.php";
