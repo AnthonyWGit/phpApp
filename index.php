@@ -1,43 +1,15 @@
-<?php
-    session_start();       
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajout produit</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-</head>
-<body>
-    <?php
-    if (($_SESSION['status'] == 1 || 2) && $_SESSION['status'] != 'init')
-    {
-        echo "<div class='container-fluid d-flex alert alert-info bg-gradient bg-opacity-25 w-50 rounded justify-content-around text-danger mt-1'><h4>"
-        .$_SESSION['msg']."</h4> </div>";
-        $_SESSION['status'] = 'init';
-    }
-    else if ($_SESSION['status'] == 'init')
-    {
 
-    }
-    ?>
-    <div class="container-fluid d-flex flex-wrap mt-3">
-        <div class="d-flex flex-column w-75 flex-grow-1 ">
-            <div class="l-5 mr-5 bg-dark <?= (isset($_SESSION['products']) == false || $_SESSION['products']== []) ? 'rounded-top ': 'rounded-start ' ?> bg-gradient "?> 
-                <header class="">
-                    <nav class="navbar-expand-lg navbar-nav display-6 ">
-                        <ul class="d-flex flex-row  navbar-nav justify-content-around">
-                            <li><a href="recap.php" class="navbar-brand text-white">Récap</a></li>
-                            <li><a href="index.php" class="navbar-brand text-white">Index</a></li>                            
-                        </ul>
-                    </nav>
-                </header>
-            </div>
-            <div class="d-flex justify-content-center flex-column <?= (isset($_SESSION['products']) == false || $_SESSION['products']== []) ? 'rounded-bottom ' : 'rounded-start ' ?>flex-wrap ml-5 mr-5 mb-5 bg-success bg-gradient bg-opacity-75 ">
+
+<?php
+    ob_start();
+
+?>
+<!--______________________________________________________________________________________________________-->
+
+        <div class="d-flex flex-column w-75 flex-grow-1 ">          
+            <div class="d-flex justify-content-center flex-column flex-wrap ml-5 mr-5 mb-5 ">
                 <h1 class="text-center text-info display-2 user-select-none"><u>Ajouter un produit</u></h1>
-                <form action="traitement.php" method="post" class="d-flex flex-column justify-content-around form-control bg-light bg-gradient bg-opacity-50">
+                <form action="traitement.php?action=ajoutProduit" method="post" class="d-flex flex-column justify-content-around form-control bg-light bg-gradient bg-opacity-50">
                     <p>
                         <label>
                         <div class="well well-lg display-6 fst-italic user-select-none p-3">Nom du produit : </div>
@@ -70,7 +42,7 @@
     }
     else
     {
-        echo    "<div class='d-flex flex-grow-1 flex-column overflow-auto ml-5 mr-5 mb-5 bg-dark bg-gradient w-25 rounded-end text-center bg-opacity-25 border border-secondary rounded-right'>
+        echo    "<div class='d-flex flex-grow-1 flex-column overflow-auto ml-5 mr-5 mb-5 bg-dark bg-gradient w-25 rounded-end text-center bg-opacity-25 '>
                     <h5 class='m-1 display-6 pb-4'>Articles dans le panier</h5>
                     <ul class='d-flex flex-nowrap justify-content-center align-items-center rounded-end list-group'>";
                         foreach($_SESSION['products'] as $index => $product)
@@ -84,6 +56,8 @@
 ?>
 <!--______________________________________________________________________________________________________-->
 
-    </div>    
-</body>
-</html>
+<?php
+
+$contenu = ob_get_clean();
+
+require "template.php";
