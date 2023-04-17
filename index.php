@@ -14,7 +14,7 @@
     <?php
     if (($_SESSION['status'] == 1 || 2) && $_SESSION['status'] != 'init')
     {
-        echo "<div class='container-fluid d-flex bg-info bg-gradient bg-opacity-25 w-50 rounded justify-content-around text-danger mt-1'><h4>"
+        echo "<div class='container-fluid d-flex alert alert-info bg-gradient bg-opacity-25 w-50 rounded justify-content-around text-danger mt-1'><h4>"
         .$_SESSION['msg']."</h4> </div>";
         $_SESSION['status'] = 'init';
     }
@@ -24,7 +24,7 @@
     }
     ?>
     <div class="container-fluid d-flex flex-wrap mt-3">
-        <div class="d-flex flex-column flex-grow-1 rounded ">
+        <div class="d-flex flex-column flex-grow-1 ">
             <div class="l-5 mr-5 bg-dark <?= (isset($_SESSION['products']) == false || $_SESSION['products']== []) ? 'rounded-top ': 'rounded-start ' ?> bg-gradient "?> 
                 <header class="">
                     <nav class="navbar-expand-lg navbar-nav display-6 ">
@@ -37,23 +37,23 @@
             </div>
             <div class="d-flex justify-content-center flex-column <?= (isset($_SESSION['products']) == false || $_SESSION['products']== []) ? 'rounded-bottom ' : 'rounded-start ' ?>flex-wrap ml-5 mr-5 mb-5 bg-success bg-gradient bg-opacity-75 ">
                 <h1 class="text-center text-info display-2 user-select-none"><u>Ajouter un produit</u></h1>
-                <form action="traitement.php" method="post" class="d-flex flex-column justify-content-around">
+                <form action="traitement.php" method="post" class="d-flex flex-column justify-content-around form-control bg-light bg-gradient bg-opacity-50">
                     <p>
                         <label>
                         <div class="well well-lg display-6 fst-italic user-select-none p-3">Nom du produit : </div>
-                            <input type="text" name="name" class="w-50 p-1 m-2">
+                            <input type="text" name="name" class="w-50 p-1 m-2 form-control form-control-lg ">
                         </label>
                     </p>
                     <p>
                         <label>
                         <div class="well well-lg display-6 fst-italic user-select-none p-3">Prix du produit : </div>
-                            <input type="number" step="any" name="price" class="w-50 p-1 m-2">
+                            <input type="number" step="any" name="price" class="w-50 p-1 m-2 form-control form-control-lg">
                         </label>
                     </p>
                     <p>
                         <label>
                         <div class="well well-lg display-6 fst-italic user-select-none p-3">Quantité désirée : </div>
-                            <input type="number" name="qtt" value="1" class="w-50 p-1 m-2">
+                            <input type="number" name="qtt" value="1" class="w-50 p-1 m-2 form-control form-control-lg">
                         </label>
                     </p>
                     <p class="m-2">
