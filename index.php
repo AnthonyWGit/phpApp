@@ -75,7 +75,7 @@
                     <ul class='d-flex flex-nowrap justify-content-center align-items-center rounded-end list-group'>";
                         foreach($_SESSION['products'] as $index => $product)
                         {
-                            echo "<li class='list-group-item list-group-item-action rounded m-1 w-75 list-group-item-info text-center'>".$product["name"]."</li>";
+                            echo "<li class='list-group-item overflow-auto list-group-item-action rounded m-1 w-75 list-group-item-info text-center'>".$product["name"]."</li>";
                         }
                         
         echo    "</ul>
