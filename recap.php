@@ -32,14 +32,15 @@
     else
     {
         echo "<div class='pt-5  d-flex flex-row flex-wrap'>",
-           "<table class='table table-hover table-responsive table-striped'>",
+           "<table class='table text-center table-hover table-responsive table-striped'>",
                 "<thead class='table-info'>",
                     "<tr>",
-                        "<th>#</th>",
-                        "<th>Nom</th>",
-                        "<th>Prix</th>",
-                        "<th>Quantité</th>",
-                        "<th>Total</th>",
+                        "<th class='w-25'>#</th>",
+                        "<th class='w-50'>Nom</th>",
+                        "<th class='w-100'>Prix</th>",
+                        "<th class='w-100'>Quantité</th>",
+                        "<th class='w-100'>Total</th>",
+                        "<th class='w-100'></th>",
                     "</tr>",
                 "</thead>",
                 "<tbody>";
@@ -47,12 +48,12 @@
         foreach($_SESSION["products"] as $index => $product)
         {
             echo "<tr>",
-                    "<td>".$index."</td>", 
+                    "<td class=''>".$index."</td>", 
                     "<td>".$product["name"]."</td>",
                     "<td>".number_format($product["price"], 2, ",", "&nbsp;")."&nbsp;€</td>",      //&nbsp : non-breaking space : strings separated by this will not appear on second line  
                     "<td class='d-flex flex-row justify-content-around align-items-center'>
                         <form action='qttMoins.php' method='post'>
-                            <button class='btn btn-info  text-nowrap' value='$index' name='submit'>
+                            <button class='btn btn-info  text-nowrap class='m-3 p-3' value='$index' name='submit'>
                                 <i class='bi bi-arrow-down'></i>
                             </button>
                         </form>"
