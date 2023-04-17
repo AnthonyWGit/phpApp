@@ -24,7 +24,7 @@
     }
     ?>
     <div class="container-fluid d-flex flex-wrap mt-3">
-        <div class="d-flex flex-column flex-grow-1 ">
+        <div class="d-flex flex-column w-75 flex-grow-1 ">
             <div class="l-5 mr-5 bg-dark <?= (isset($_SESSION['products']) == false || $_SESSION['products']== []) ? 'rounded-top ': 'rounded-start ' ?> bg-gradient "?> 
                 <header class="">
                     <nav class="navbar-expand-lg navbar-nav display-6 ">
@@ -70,7 +70,7 @@
     }
     else
     {
-        echo    "<div class='d-flex flex-column flex-fill overflow-auto ml-5 mr-5 mb-5 bg-dark bg-gradient w-25 rounded-end text-center bg-opacity-25 border border-secondary rounded-right'>
+        echo    "<div class='d-flex flex-grow-1 flex-column overflow-auto ml-5 mr-5 mb-5 bg-dark bg-gradient w-25 rounded-end text-center bg-opacity-25 border border-secondary rounded-right'>
                     <h5 class='m-1 display-6 pb-4'>Articles dans le panier</h5>
                     <ul class='d-flex flex-nowrap justify-content-center align-items-center rounded-end list-group'>";
                         foreach($_SESSION['products'] as $index => $product)
