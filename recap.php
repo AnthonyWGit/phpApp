@@ -31,9 +31,9 @@
     }
     else
     {
-        echo "<div class='pt-5 table-responsive d-flex flex-row flex-wrap'>",
-           "<table class='w-100'>",
-                "<thead>",
+        echo "<div class='pt-5  d-flex flex-row flex-wrap'>",
+           "<table class='table table-hover table-responsive table-striped'>",
+                "<thead class='table-info'>",
                     "<tr>",
                         "<th>#</th>",
                         "<th>Nom</th>",
@@ -76,7 +76,7 @@
         }
         echo "<tr>",
                 "<td><form action='supression.php' method='post'><button class='btn btn-warning' value='".$_SESSION['supprimerTOUT']."' name='submit'>Tout supprimer</button></form></td>",
-                "<td colspan=3>Total général :</td>",
+                "<td colspan=4>Total général :</td>",
                 "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td></div>";
     }
     ?>
