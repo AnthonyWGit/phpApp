@@ -25,7 +25,7 @@
     ?>
     <div class="container-fluid d-flex flex-wrap mt-3">
         <div class="d-flex flex-column flex-grow-1 rounded ">
-            <div class="l-5 mr-5 bg-dark <?= $_SESSION['products'] == [] ? 'rounded-top ': 'rounded-start ' ?> bg-gradient "?> 
+            <div class="l-5 mr-5 bg-dark <?= (isset($_SESSION['products']) == false || $_SESSION['products']== []) ? 'rounded-top ': 'rounded-start ' ?> bg-gradient "?> 
                 <header class="">
                     <nav class="navbar-expand-lg navbar-nav display-6 ">
                         <ul class="d-flex flex-row  navbar-nav justify-content-around">
@@ -35,7 +35,7 @@
                     </nav>
                 </header>
             </div>
-            <div class="d-flex justify-content-center flex-column <?= $_SESSION['products'] == [] ? 'rounded-bottom ' : 'rounded-start ' ?>flex-wrap ml-5 mr-5 mb-5 bg-success bg-gradient bg-opacity-75 ">
+            <div class="d-flex justify-content-center flex-column <?= (isset($_SESSION['products']) == false || $_SESSION['products']== []) ? 'rounded-bottom ' : 'rounded-start ' ?>flex-wrap ml-5 mr-5 mb-5 bg-success bg-gradient bg-opacity-75 ">
                 <h1 class="text-center text-info display-2 user-select-none"><u>Ajouter un produit</u></h1>
                 <form action="traitement.php" method="post" class="d-flex flex-column justify-content-around">
                     <p>
@@ -72,7 +72,7 @@
     {
         echo    "<div class='d-flex flex-fill flex-column overflow-auto ml-5 mr-5 mb-5 bg-dark bg-gradient w-25 rounded-end text-center bg-opacity-25 border border-secondary rounded-right'>
                     <h5 class='m-1 display-6 pb-4'>Articles dans le panier</h5>
-                    <ul class='d-flex justify-content-center align-items-center rounded-end list-group'>";
+                    <ul class='d-flex flex-nowrap justify-content-center align-items-center rounded-end list-group'>";
                         foreach($_SESSION['products'] as $index => $product)
                         {
                             echo "<li class='list-group-item list-group-item-action rounded m-1 w-75 list-group-item-info text-center'>".$product["name"]."</li>";
