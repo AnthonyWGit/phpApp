@@ -35,6 +35,7 @@
                     </nav>
                 </header>
             </div>
+        </div>
 
     <?= $contenu ?>
 
