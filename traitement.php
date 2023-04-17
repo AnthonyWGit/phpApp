@@ -34,7 +34,23 @@
                 break;
                 case "suprimAll":
                     unset($_SESSION['products']);
-
+                    header("Location:recap.php");                     
                     break;
+                case "ajoutQtt":
+                    $_SESSION['products'][$_POST['submit']]["qtt"] = $_SESSION['products'][$_POST['submit']]["qtt"] + 1;
+                    $_SESSION['products'][$_POST['submit']]["total"] = $_SESSION['products'][$_POST['submit']]["qtt"] * $_SESSION['products'][$_POST['submit']]["price"];
+                    header("Location:recap.php");  
+                    break;
+                case "enleverQtt":
+                    $_SESSION['products'][$_POST['submit']]["qtt"] = $_SESSION['products'][$_POST['submit']]["qtt"] - 1;
+                    if(($_SESSION['products'][$_POST['submit']]["qtt"]) < 1) unset($_SESSION['products'][$_POST['submit']]);
+                    $_SESSION['products'][$_POST['submit']]["total"] = $_SESSION['products'][$_POST['submit']]["qtt"] * $_SESSION['products'][$_POST['submit']]["price"];
+                    header("Location:recap.php");                      
+                    break;
+                case "supprimerProduit":
+                    echo $_POST['submit']; 
+                    unset($_SESSION['products'][$_POST['submit']]);     
+                    header("Location:recap.php");  
+                    break; 
         }
 }        //Toujours à la fin ! Redirection si utilisateur arrive sur cette page via url 

@@ -52,13 +52,13 @@
                     "<td>".$product["name"]."</td>",
                     "<td>".number_format($product["price"], 2, ",", "&nbsp;")."&nbsp;€</td>",      //&nbsp : non-breaking space : strings separated by this will not appear on second line  
                     "<td class='d-flex flex-row justify-content-around align-items-center'>
-                        <form action='qttMoins.php' method='post'>
+                        <form action='traitement.php?action=enleverQtt' method='post'>
                             <button class='btn btn-info  text-nowrap class='p-3' value='$index' name='submit'>
                                 <i class='bi bi-arrow-down'></i>
                             </button>
                         </form>"
                         .$product["qtt"].
-                        "<form action='qttPlus.php' method='post'>
+                        "<form action='traitement.php?action=ajoutQtt' method='post'>
                             <button class='btn btn-info  text-nowrap' value='$index' name='submit'>
                                 <i class='bi bi-arrow-up'></i>
                             </button>
@@ -66,7 +66,7 @@
                     </td>",
                     "<td>".number_format($product["total"], 2, ",", "&nbsp;")."&nbsp;€</td>",
                     "<td>
-                        <form action='supression.php' method='post'>
+                        <form action='traitement.php?action=supprimerProduit' method='post'>
                             <button class='btn btn-warning' value='$index' name='submit'>
                                 <i class='bi bi-x'></i>
                             </button>
@@ -74,9 +74,10 @@
                     </td>",
                 "</tr>";
             $totalGeneral += $product['total'];
+            var_dump($totalGeneral);
         }
         echo "<tr>",
-                "<td><form action='supression.php' method='post'><button class='btn btn-warning' value='".$_SESSION['supprimerTOUT']."' name='submit'>Tout supprimer</button></form></td>",
+                "<td><form action='traitement.php?action=suprimAll' method='post'><button class='btn btn-warning' value='".$_SESSION['supprimerTOUT']."' name='submit'>Tout supprimer</button></form></td>",
                 "<td colspan=4>Total général :</td>",
                 "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td></div>";
     }
