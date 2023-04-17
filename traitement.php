@@ -1,3 +1,8 @@
+
+<?php
+    ob_start();
+?>
+
 <?php
   
     if (isset($_GET['action'])) 
@@ -29,8 +34,8 @@
                         $no = 2;
                         $_SESSION['msg'] = "Juste non";
                     }
+                header("Location:index.php");                      
                 }   
-                header("Location:index.php");  
                 break;
                 case "suprimAll":
                     unset($_SESSION['products']);
@@ -54,3 +59,8 @@
                     break; 
         }
 }        //Toujours à la fin ! Redirection si utilisateur arrive sur cette page via url 
+
+
+$contenu = ob_get_clean();
+
+require "template.php"; ?>

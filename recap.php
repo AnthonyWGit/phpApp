@@ -1,5 +1,5 @@
 <?php
-    ob_start();
+    ob_start();  
 ?>
 
 <div class="container-fluid d-flex flex-wrap mt-3">
@@ -56,7 +56,6 @@
                     </td>",
                 "</tr>";
             $totalGeneral += $product['total'];
-            var_dump($totalGeneral);
         }
         echo "<tr>",
                 "<td><form action='traitement.php?action=suprimAll' method='post'><button class='btn btn-warning' value='".$_SESSION['supprimerTOUT']."' name='submit'>Tout supprimer</button></form></td>",
@@ -68,7 +67,5 @@
 </div>
 
 <?php
-
 $contenu = ob_get_clean();
-
 require "template.php"; ?>
