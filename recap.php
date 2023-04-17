@@ -32,7 +32,7 @@
     else
     {
         echo "<div class='pt-5  d-flex flex-row flex-wrap'>",
-           "<table class='table text-center table-hover table-responsive table-striped'>",
+           "<table class='table text-center table-hover table-responsive table-striped align-middle'>",
                 "<thead class='table-info'>",
                     "<tr>",
                         "<th class='w-25'>#</th>",
