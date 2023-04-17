@@ -1,7 +1,9 @@
 <?php
     session_start();    
-    if (isset($_GET['action'])) {
-        switch($_GET['action']){
+    if (isset($_GET['action'])) 
+    {
+        switch($_GET['action'])
+        {
             case "ajoutProduit":               //Vérifier qu'on accède à cette page via validation du formulaire
                 if (isset($_POST["submit"]))            
                 {                                  //Vérifier que toutes les valeurs correspondent à ce qu'on veut
@@ -26,7 +28,6 @@
                     {
                         $no = 2;
                         $_SESSION['msg'] = "Juste non";
-                        $_SESSION['status'] = $no;
                     }
                 }   
                 header("Location:index.php");  
@@ -35,8 +36,5 @@
                     unset($_SESSION['products']);
 
                     break;
-            
         }
-
-
 }        //Toujours à la fin ! Redirection si utilisateur arrive sur cette page via url 
