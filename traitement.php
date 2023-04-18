@@ -15,8 +15,9 @@
                     $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                     $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
         //____________________________VERIFICATION DES IMAGES________________________________________
-                     if (!empty($_FILES))
-                     {
+                    if (!empty(($_FILES['fileToUpload']["name"])))
+                    {
+                        var_dump($_FILES);
                          $target_dir = "uploads/";                                                   //Emplacement où les images sont hébergées
                          $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);     // .basename retourne la dernière composante du chemin
                          $uploadOk = 1;
@@ -29,11 +30,14 @@
                          } 
                          else 
                          {
-                         echo "Fichier est bien une image.";
+                         echo "Fichier N4EST PAS UNE IMAGe.";
                          $uploadOk = 0;
-                         }                        
-                     }
+                         }  
+                    }
+                    else
+                    {
 
+                    }
         //____________________________________________________________________________________________________
                     $_SESSION['msg'] = "Le produit a été entré";
                     // $_SESSION['supprimerTOUT'] = "suppression";
