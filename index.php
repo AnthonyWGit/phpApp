@@ -7,7 +7,9 @@
 <?php
     if (isset($_SESSION['msg']) )
     {
-        echo "<div class='alert d-flex flex-column flex-wrap order-1 alert-success mt-3'>"
+        $success = " alert-success ";
+        $warning = " alert-warning ";
+        echo "<div class= '".($_SESSION['msg'] == "Le produit a été entré" ? $success : $warning)." alert d-flex flex-wrap w-100 m-1 justify-content-center'>"
         .$_SESSION['msg']."</div>";
         unset($_SESSION['msg']);
     }

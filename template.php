@@ -14,7 +14,7 @@
 <body>
     <div class="container-fluid d-flex flex-wrap mt-3">
         <div class="d-flex flex-column w-75 flex-grow-1 ">
-            <div class="l-5 mr-5 bg-dark <?= (isset($_SESSION['products']) == false || $_SESSION['products']== []) ? 'rounded-top ': 'rounded-start ' ?> bg-gradient "?> 
+            <div class="l-5 mr-5 bg-dark rounded bg-gradient "> 
                 <header class="">
                     <nav class="navbar-expand-lg navbar-nav display-6 ">
                         <ul class="d-flex flex-row  navbar-nav justify-content-around">
