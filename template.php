@@ -1,5 +1,5 @@
 <?php
-    session_start();       
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,18 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <?php
-    if (isset($_SESSION['msg']) )
-    {
-        echo "<div class='alert alert-success mt-3'>"
-        .$_SESSION['msg']."</div>";
-        unset($_SESSION['msg']);
-    }
-    else 
-    {
-
-    }
-    ?>
     <div class="container-fluid d-flex flex-wrap mt-3">
         <div class="d-flex flex-column w-75 flex-grow-1 ">
             <div class="l-5 mr-5 bg-dark <?= (isset($_SESSION['products']) == false || $_SESSION['products']== []) ? 'rounded-top ': 'rounded-start ' ?> bg-gradient "?> 

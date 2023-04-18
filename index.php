@@ -1,9 +1,23 @@
 
 <?php
+    session_start();
     ob_start();
-    if (!isset($_SESSION)) session_start();
 ?>
-<!--______________________________________________________________________________________________________-->
+
+<?php
+    if (isset($_SESSION['msg']) )
+    {
+        echo "<div class='alert d-flex flex-column flex-wrap order-1 alert-success mt-3'>"
+        .$_SESSION['msg']."</div>";
+        unset($_SESSION['msg']);
+    }
+    else 
+    {
+
+    }
+    ?>
+
+<!--______________________________FORM_______________________________________________-->
 
         <div class="d-flex flex-column w-75 flex-grow-1 ">          
             <div class="d-flex justify-content-center flex-column flex-wrap ml-5 mr-5 mb-5 ">
@@ -34,7 +48,7 @@
                 </form>
             </div>
         </div>
-<!--____________________________________________________________________________________-->
+<!--_________________________________CART___________________________________________________-->
 <?php
     if (isset($_SESSION["products"]) == false || ($_SESSION["products"] == []))   //<!-- Affichage récapitulatif des produits-->
     {                                                                    //N'apparait que quand il y a des produits dans session

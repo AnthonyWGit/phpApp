@@ -1,10 +1,10 @@
 
 <?php
+    session_start();
     ob_start();
 ?>
 
 <?php
-  
     if (isset($_GET['action'])) 
     {
         switch($_GET['action'])

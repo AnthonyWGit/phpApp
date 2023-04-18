@@ -1,10 +1,9 @@
 <?php
+    session_start();
     ob_start();  
 ?>
-
 <div class="container-fluid d-flex flex-wrap mt-3">
         <div class="d-flex flex-column flex-grow-1">
-
     <?php //var_dump($_SESSION); 
     if (!isset($_SESSION["products"]) || empty($_SESSION["products"]))          //Quand il n'y a pas de produits ou des produits nons filtrés 
     {
