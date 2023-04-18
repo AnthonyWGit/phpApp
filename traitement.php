@@ -36,7 +36,7 @@
                         }
                         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
                         {
-                            echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été téléchargé.";
+                            echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été téléchargé."; //Moving files to upload dir
                         } else 
                         {
                             echo "Non, ça ne marche pas d'upload un pdf.";
@@ -87,8 +87,15 @@
                     break;
                 case "enleverQtt":
                     $_SESSION['products'][$_POST['submit']]["qtt"] = $_SESSION['products'][$_POST['submit']]["qtt"] - 1;
-                    if(($_SESSION['products'][$_POST['submit']]["qtt"]) < 1) unset($_SESSION['products'][$_POST['submit']]);
-                    $_SESSION['products'][$_POST['submit']]["total"] = $_SESSION['products'][$_POST['submit']]["qtt"] * $_SESSION['products'][$_POST['submit']]["price"];
+                    if(($_SESSION['products'][$_POST['submit']]["qtt"]) < 1) 
+                    {
+                        unset($_SESSION['products'][$_POST['submit']]);
+                    }
+                    else
+                    {
+                        $_SESSION['products'][$_POST['submit']]["total"] = $_SESSION['products'][$_POST['submit']]["qtt"] * $_SESSION['products'][$_POST['submit']]["price"];                        
+                    }
+                    
                     header("Location:recap.php");                      
                     break;
                 case "supprimerProduit":
