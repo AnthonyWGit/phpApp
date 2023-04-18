@@ -3,7 +3,7 @@
     session_start();
     ob_start();
 ?>
-
+<!-- __________________________________ALERT________________________________________-->
 <?php
     if (isset($_SESSION['msg']) )
     {
@@ -24,7 +24,7 @@
         <div class="d-flex flex-column w-75 flex-grow-1 ">          
             <div class="d-flex justify-content-center flex-column flex-wrap ml-5 mr-5 mb-5 ">
 
-                <form action="traitement.php?action=ajoutProduit" method="post" class="d-flex flex-column justify-content-around form-control bg-light bg-gradient bg-opacity-50">
+                <form action="traitement.php?action=ajoutProduit" method="post" enctype="multipart/form-data" class="d-flex flex-column justify-content-around form-control bg-light bg-gradient bg-opacity-50">
                 <h1 class="text-center text-info display-2 user-select-none"><u>Ajouter un produit</u></h1>                    
                     <p>
                         <label>
@@ -42,6 +42,13 @@
                         <label>
                         <div class="fst-italic user-select-none p-3">Quantité désirée : </div>
                             <input type="number" name="qtt" value="1" class="w-50 p-1 m-2 form-control form-control-lg">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                        <div class="fst-italic user-select-none p-3">Uploadez une image : </div>
+                            <input type="file" name="fileToUpload" id="fileToUpload" class="w-50 p-1 m-2 form-control form-control-lg">   <!-- Sélecteur image-->
+                            <input type="submit" value="Upload Image" name="submit" class="w-50 p-1 m-2 form-control form-control-lg">
                         </label>
                     </p>
                     <p class="m-2">

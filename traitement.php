@@ -15,11 +15,32 @@
                     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);                                   //Vérifier que toutes les valeurs correspondent à ce qu'on veut
                     $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                     $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
+        //____________________________VERIFICATION DES IMAGES________________________________________
+                    if (!empty($_FILES))
+                    {
+                        $target_dir = "uploads/";                                                   //Emplacement où les images sont hébergées
+                        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);     // .basename retourne la dernière composante du chemin
+                        $uploadOk = 1;
+                        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));     //cherche le type du fichier
+                        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                        if($check !== false) 
+                        {
+                        echo "File is an image - " . $check["mime"] . ".";
+                        $uploadOk = 1;
+                        } 
+                        else 
+                        {
+                        echo "File is not an image.";
+                        $uploadOk = 0;
+                        }                        
+                    }
+
+        //____________________________________________________________________________________________________
                     $_SESSION['msg'] = "Le produit a été entré";
                     $_SESSION['supprimerTOUT'] = "suppression";
                     $yes = 1;
                     $_SESSION['status'] = $yes;
-                    if($name && $price && $qtt)
+                    if(($name && $price && $qtt) || ($name && $price && $qtt & $_FILES["fileToUpload"]))
                     {
                         $product = [                                         //Caractéristiques d'un produit
                             "name"  => $name,
@@ -33,6 +54,8 @@
                     {
                         $no = 2;
                         $_SESSION['msg'] = "Juste non";
+                        var_dump($_POST);
+                        die();
                     }
                 header("Location:index.php");                      
                 }   
