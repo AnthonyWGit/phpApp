@@ -1,8 +1,6 @@
-<?php
-
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">                                                <!-- Template sert à inclure doctype, head, etc. (tous les éléments communs des fichiers php) dans ce 
+                                                                fichier pour qu'il soit inclus dans toutes les parties du site -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +13,7 @@
     <div class="container-fluid d-flex flex-wrap mt-3">
         <div class="d-flex flex-column w-75 flex-grow-1 ">
             <div class="l-5 mr-5 bg-dark rounded bg-gradient "> 
-                <header class="">
+                <header>
                     <nav class="navbar-expand-lg navbar-nav display-6 ">
                         <ul class="d-flex flex-row  navbar-nav justify-content-around">
                             <li><a href="recap.php" class="navbar-brand text-white">Récap</a></li>

@@ -18,7 +18,6 @@
 
     }
     ?>
-
 <!--______________________________FORM_______________________________________________-->
 
         <div class="d-flex flex-column w-75 flex-grow-1 ">          
@@ -48,7 +47,6 @@
                         <label>
                         <div class="fst-italic user-select-none p-3">Uploadez une image : </div>
                             <input type="file" name="fileToUpload" id="fileToUpload" class="w-50 p-1 m-2 form-control form-control-lg">   <!-- Sélecteur image-->
-                            <input type="submit" value="Upload Image" name="submit" class="w-50 p-1 m-2 form-control form-control-lg">
                         </label>
                     </p>
                     <p class="m-2">
@@ -59,7 +57,7 @@
         </div>
 <!--_________________________________CART___________________________________________________-->
 <?php
-    if (isset($_SESSION["products"]) == false || ($_SESSION["products"] == []))   //<!-- Affichage récapitulatif des produits-->
+    if (!isset($_SESSION["products"])|| ($_SESSION["products"] == []))   //<!-- Affichage récapitulatif des produits-->
     {                                                                    //N'apparait que quand il y a des produits dans session
         
     }
