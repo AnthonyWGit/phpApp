@@ -29,15 +29,15 @@
         foreach($_SESSION["products"] as $index => $product)
         {
             echo "<tr>",
-                    "<td class=''>".$index."</td>", 
+                    "<td>".$index."</td>", 
                     "<td>"
                         .$product["name"].
-                        " <button type='button' class='btn btn-primary' value='$index' data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                        Launch demo modal
+                        " <button type='button' class='btn btn-dark' value='$index' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+                        Aperçu
                         </button>",
                     "</td>",
                     "<td>".number_format($product["price"], 2, ",", "&nbsp;")."&nbsp;€</td>",      //&nbsp : non-breaking space : strings separated by this will not appear on second line  
-                    "<td class='text-center'>
+                    "<td class='text-center align-middle'>
                         <form action='traitement.php?action=enleverQtt' method='post'>
                             <button class='btn btn-info  text-nowrap class='p-3' value='$index' name='submit'>
                                 <i class='bi bi-arrow-down'></i>
