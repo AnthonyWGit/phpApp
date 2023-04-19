@@ -73,7 +73,7 @@
 </div>
 <!-- _________________________________________Modal _______________________________________________________-->
 <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg"> <!-- Grande modale-->
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Aperçu du produit</h1>
@@ -81,7 +81,7 @@
       </div>
       <div class="modal-body">
         <p> Modale </p>
-        <div class = "embed-responsive embed-responsive-16by9">
+        <div class = "embed-responsive embed-responsive-16by9">     <!-- Comme ça l'iframe prend tout le modal body-->
         <iframe title="iframe" name="iframe" width ="100%" height = "500vh" src="modalePic.php?action=" > 
         </iframe>  
         </div>

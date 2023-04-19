@@ -25,8 +25,8 @@
                          $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                          if($check !== false) 
                         {
-                           echo "Fichier est bien une image - " . $check["mime"] . ".";
-                           $uploadOk = 1;
+                           echo "Fichier est bien une image - " . $check["mime"] . ".";             //mime = MIME ; c'est un format texte qui supporte des choses autre que ASCII
+                           $uploadOk = 1;                                                           //dont des fichiers images
                            var_dump($check["mime"]);
                         } 
                         else 
@@ -36,7 +36,7 @@
                         }
                         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
                         {
-                            echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été téléchargé."; //Moving files to upload dir
+                            echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été téléchargé."; //Fichiers déplacés vers upload
                         } else 
                         {
                             echo "Non, ça ne marche pas d'upload un pdf.";
