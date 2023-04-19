@@ -32,7 +32,8 @@
                     "<td>".$index."</td>", 
                     "<td>"
                         .$product["name"].
-                        "<form action='modalePic.php?action=$index' target='iframe' method='post'>",
+                        "<form action='modalePic.php?action=$index' target='iframe' method='post'>", 
+                        //Target = iframe pour pouvoir envoyer le résultat du form dans une iframe sinon ça ouvre une nouvelle page
                         " <button class='btn btn-dark' id='submit' name='submit' value='submit' data-bs-toggle='modal' data-bs-target='.bd-example-modal-lg'>
                         Aperçu
                         </button>",
@@ -82,7 +83,7 @@
       <div class="modal-body">
         <p> Modale </p>
         <div class = "embed-responsive embed-responsive-16by9">     <!-- Comme ça l'iframe prend tout le modal body-->
-        <iframe title="iframe" name="iframe" width ="100%" height = "500vh" src="modalePic.php?action=" > 
+        <iframe title="iframe" name="iframe" width ="100%" height = "500vh" src="modalePic.php" > 
         </iframe>  
         </div>
       </div>

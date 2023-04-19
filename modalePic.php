@@ -15,7 +15,7 @@
 </head>
 <body>
 <?php
-    echo "<div class='container-fluid vh-100 d-flex align-content-center'>";
+    echo "<div class='container-fluid vh-100 d-flex align-content-center'>"; //Div pour centrer
     echo "<div class ='d-flex flex-grow-1 flex-column justify-content-center flex-wrap align-content-center align-items-stretch'>";
     echo "<img src='" . $_SESSION['products'][$_GET['action']]['image'] . " ' class='img-fluid' >" ;          //On veut l'image du même index que le produit sur lequel
     echo "</div>";
