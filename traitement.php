@@ -25,7 +25,7 @@
                          $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                          if($check !== false) 
                         {
-                           echo "Fichier est bien une image - " . $check["mime"] . ".";             //mime = MIME ; c'est un format texte qui supporte des choses autre que ASCII
+                           echo "Fichier est bien une image - " . $check["mime"] . ".";             //mime = MIME ; c'est un format qui supporte des choses autre que texte ASCII
                            $uploadOk = 1;                                                           //dont des fichiers images
                            var_dump($check["mime"]);
                         } 
