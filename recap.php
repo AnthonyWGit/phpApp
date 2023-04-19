@@ -32,9 +32,11 @@
                     "<td>".$index."</td>", 
                     "<td>"
                         .$product["name"].
-                        " <button type='button' class='btn btn-dark' value='$index' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+                        "<form action='modalePic.php?action=$index' target='iframe' method='post'>",
+                        " <button class='btn btn-dark' id='submit' name='submit' value='submit' data-bs-toggle='modal' data-bs-target='#exampleModal'>
                         Aperçu
                         </button>",
+                        "</form>",
                     "</td>",
                     "<td>".number_format($product["price"], 2, ",", "&nbsp;")."&nbsp;€</td>",      //&nbsp : non-breaking space : strings separated by this will not appear on second line  
                     "<td class='text-center align-middle'>
@@ -69,7 +71,6 @@
     ?>
     </div>
 </div>
-    
 <!-- _________________________________________Modal _______________________________________________________-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -80,7 +81,8 @@
       </div>
       <div class="modal-body">
         <p> Modale </p>
-        <?= '<img src="'. $_SESSION["products"][$index]["image"]. '">'  ?>
+        <iframe 
+                title="iframe" name="iframe" width ="100%" height = "400vh" src="modalePic.php?action=" > </iframe>  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-bs-dismiss="modal"> Fermer </button>
