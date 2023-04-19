@@ -33,7 +33,7 @@
                     "<td>"
                         .$product["name"].
                         "<form action='modalePic.php?action=$index' target='iframe' method='post'>",
-                        " <button class='btn btn-dark' id='submit' name='submit' value='submit' data-bs-toggle='modal' data-bs-target='#exampleModal'>
+                        " <button class='btn btn-dark' id='submit' name='submit' value='submit' data-bs-toggle='modal' data-bs-target='.bd-example-modal-lg'>
                         Aperçu
                         </button>",
                         "</form>",
@@ -72,8 +72,8 @@
     </div>
 </div>
 <!-- _________________________________________Modal _______________________________________________________-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Aperçu du produit</h1>
@@ -81,8 +81,10 @@
       </div>
       <div class="modal-body">
         <p> Modale </p>
-        <iframe 
-                title="iframe" name="iframe" width ="100%" height = "400vh" src="modalePic.php?action=" > </iframe>  
+        <div class = "embed-responsive embed-responsive-16by9">
+        <iframe title="iframe" name="iframe" width ="100%" height = "500vh" src="modalePic.php?action=" > 
+        </iframe>  
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-bs-dismiss="modal"> Fermer </button>
