@@ -34,13 +34,38 @@
                            echo "Fichier N4EST PAS UNE IMAGe.";
                            $uploadOk = 0;
                         }
-                        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
-                        {
-                            echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été téléchargé."; //Fichiers déplacés vers upload
-                        } else 
-                        {
-                            echo "Non, ça ne marche pas d'upload un pdf.";
+                        if (file_exists($target_file))                                            //Vérifier que le fichier existe déjà
+                        {   
+                            echo "Fichier déjà existant";
+                            $uploadOk = 0;
                         }
+                        if ($_FILES["fileToUpload"]["size"] > 500000000)            //Vérifier que le ficher ne dépasse pas 500 mb
+                        {
+                            echo 'fichier trop grand !';
+                            $uploadOk = 0;
+                        }
+                        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" //On regarde si le type de ficher
+                        && $imageFileType != "gif" ) //N'est pas jpg ou n'est pas png ou n'est pas jpeg ou n'est pas gif
+                        {
+                            echo "Pas le bon format";
+                        }
+                        if ($uploadOk == 0)                 //Voir en en haut $uploadOk == 0 c'est tous les cas où il y a une erreur
+                        {
+                            echo "error dans l'upload";
+                        }
+                        else
+                        {
+                            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
+                            {
+                                echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été téléchargé."; //Fichiers déplacés vers upload
+                            } 
+                            else 
+                            {
+                                echo "Non, ça ne marche pas d'upload un pdf.";
+                            }                            
+                        }
+
+
                         echo "<img src='".$target_file."'>";
                     }
                     else
@@ -64,14 +89,14 @@
                         $_SESSION['products'][] = $product;                 //Mettre le production dans un array de produits conservé dans la superglobale session
                         var_dump($_SESSION['products']);
                         var_dump($_FILES);
-                        die();
+                        //die();
                     }
                     else
                     {
                         $no = 2;
                         $_SESSION['msg'] = "Juste non";
                         var_dump($_POST);
-                        die();
+                        //die();
                     }
                 header("Location:index.php");                      
                 }   
